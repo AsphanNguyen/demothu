@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace bai5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int n,bad=0;
+            double tbkt, dthi, dcc,dtket;
+            Console.WriteLine("Nhap so luong sv: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("Nhap tbkt: ");
+                tbkt = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Nhap diem chuyen can: ");
+                dcc=Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Nhap diem thi: ");
+                dthi=Convert.ToDouble(Console.ReadLine());
+                dtket= ((tbkt*0.4) + (dcc*0.1) + (dthi*0.5));
+                Console.WriteLine("Diem tong ket: " + dtket);
+                if (dtket>9)
+                {
+                    Console.WriteLine("Hoc luc: Xuat sac");
+                }
+                else if (dtket >= 8)
+                {
+                    Console.WriteLine("Hoc luc: Gioi");
+                }
+                else if (dtket >= 7)
+                {
+                    Console.WriteLine("Hoc luc: Kha");
+                }
+                else if (dtket >= 6)
+                {
+                    Console.WriteLine("Hoc luc: TB kha");
+                }
+                else if(dtket >= 5)
+                {
+                    Console.WriteLine("Hoc luc: Trung binh");
+                }
+                else
+                {
+                    Console.WriteLine("Hoc luc: yeu");
+                    bad++;
+                }
+            }
+            if (bad>0)
+            {
+                Console.WriteLine("So sv khong dat:" + bad);
+                Console.WriteLine("So sv dat: " + (n - bad));
+            }
+            else
+            {
+                Console.WriteLine("Khong sinh vien nao rot");
+            }
+            Console.ReadKey();
+        }
+    }
+}
